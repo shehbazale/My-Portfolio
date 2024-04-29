@@ -1,7 +1,7 @@
 import React from "react";
 import img from "./../assets/pic.jpeg";
 // import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import { MdOutlineFileDownload } from "react-icons/md";
+import { FaArrowRightToBracket } from "react-icons/fa6";
 function Home() {
   return (
     <>
@@ -26,7 +26,7 @@ function Home() {
                 Resume
                 <span className="group-hover:rotate-90 duration-500">
                 
-                  <MdOutlineFileDownload size={20} className="ml-1 -rotate-90 " />
+                  <FaArrowRightToBracket size={15} className="ml-2" />
                 </span>
               </a>
               {/* <Link to="portfolio" smooth duration={500}
