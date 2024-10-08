@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import {Link} from 'react-scroll';
-const NavBar = ()=> {
+import { Link } from "react-scroll";
+const NavBar = () => {
   const [nav, setNav] = useState(false);
   const links = [
     {
@@ -29,7 +29,11 @@ const NavBar = ()=> {
     <>
       <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed">
         <div>
-          <h1 className="text-5xl font-signature ml-2 hover:scale-105 duration-500 hover:text-cyan-600 cursor-pointer">Shehbaz</h1>
+          <Link to="home" smooth duration={500}>
+            <h1 className="text-5xl font-signature ml-2 hover:scale-105 duration-500 hover:text-cyan-600 cursor-pointer">
+              Shehbaz
+            </h1>
+          </Link>
         </div>
         <ul className="hidden md:flex">
           {links.map(({ id, link }) => {
@@ -39,7 +43,9 @@ const NavBar = ()=> {
                 className="px-4 cursor-pointer text-lg capitalize font-medium
  text-gray-400 hover:scale-105 duration-500 hover:text-cyan-600"
               >
-                <Link to={link} smooth duration={500}>{link}</Link>
+                <Link to={link} smooth duration={500}>
+                  {link}
+                </Link>
               </li>
             );
           })}
@@ -62,7 +68,14 @@ const NavBar = ()=> {
                   key={id}
                   className="px-4 cursor-pointer py-4 capitalize text-4xl"
                 >
-                  <Link onClick={()=>setNav(!nav)} to={link} smooth duration={500}>{link}</Link>
+                  <Link
+                    onClick={() => setNav(!nav)}
+                    to={link}
+                    smooth
+                    duration={500}
+                  >
+                    {link}
+                  </Link>
                 </li>
               );
             })}
@@ -71,6 +84,6 @@ const NavBar = ()=> {
       </div>
     </>
   );
-}
+};
 
 export default NavBar;
